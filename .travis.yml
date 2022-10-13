@@ -6,15 +6,20 @@ install:
   - pip install -r requirements.txt
 
 script:
+  - python -m black . --check
+  - flake8 .
   - python3 manage.py test
 
-deploy:
-  - provider: elasticbeanstalk
-    access_key_id: $ACCESSKEYID
-    secret_access_key: $SECRETACCESSKEY
-    region: ''
-    app: ''
-    env: ''
-    bucket_name: ''
-    on:
-      all_branches: true
+# after_script:
+#   - coveralls
+  
+# deploy:
+#   - provider: elasticbeanstalk
+#     access_key_id: $ACCESSKEYID
+#     secret_access_key: $SECRETACCESSKEY
+#     region: ''
+#     app: ''
+#     env: ''
+#     bucket_name: ''
+#     on:
+#       all_branches: true
