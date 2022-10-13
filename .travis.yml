@@ -8,10 +8,10 @@ install:
 script:
   - python -m black . --check
   - flake8 .
-  - python3 manage.py test
+  - coverage run --source=polls manage.py test
 
-# after_script:
-#   - coveralls
+after_success:
+  - python -m coveralls
   
 # deploy:
 #   - provider: elasticbeanstalk
