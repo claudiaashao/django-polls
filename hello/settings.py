@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = [
-    'hello-env.us-west-2.elasticbeanstalk.com',
+    'polls-env.us-west-2.elasticbeanstalk.com',
     '127.0.0.1'
 ]
 

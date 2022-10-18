@@ -13,13 +13,13 @@ script:
 after_script:
   - python -m coveralls
 
-# deploy:
-#   - provider: elasticbeanstalk
-#     access_key_id: $ACCESSKEYID
-#     secret_access_key: $SECRETACCESSKEY
-#     region: ''
-#     app: ''
-#     env: ''
-#     bucket_name: ''
-#     on:
-#       all_branches: true
+deploy:
+  - provider: elasticbeanstalk
+    access_key_id: $ACCESSKEYID
+    secret_access_key: $SECRETACCESSKEY
+    region: 'us-west-2'
+    app: 'polls-app'
+    env: 'polls-env'
+    bucket_name: 'elasticbeanstalk-us-west-2-483486020413'
+    on:
+      all_branches: true
